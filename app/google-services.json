@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058139376554",
+    "project_id": "mobdev-act",
+    "storage_bucket": "mobdev-act.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058139376554:android:bc63b93a550f82d86cf9d3",
+        "android_client_info": {
+          "package_name": "com.thebrownfoxx.push"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg_BdYuGALTUk-QIMmHnwO8TTt_ALi5RY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
