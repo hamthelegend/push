@@ -1,10 +1,11 @@
-package com.thebrownfoxx.push.ui.screens.signup
+package com.thebrownfoxx.push.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.thebrownfoxx.push.extensions.showLongToast
 import com.thebrownfoxx.push.extensions.showShortToast
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -89,7 +90,7 @@ class SignUpViewModel(private val application: Application) : AndroidViewModel(a
                     }
                 }
                 .addOnFailureListener { exception ->
-                    application.showShortToast("Error: ${exception.localizedMessage}")
+                    application.showLongToast("Error: ${exception.localizedMessage}")
                     _signupButtonEnabled.value = true
                 }
         }

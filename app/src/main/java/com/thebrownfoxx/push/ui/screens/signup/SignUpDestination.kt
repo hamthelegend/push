@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.thebrownfoxx.push.extensions.application
+import com.thebrownfoxx.push.viewmodels.SignUpViewModel
 
 @Destination
 @Composable

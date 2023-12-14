@@ -1,13 +1,11 @@
-package com.thebrownfoxx.push.ui.screens.login
+package com.thebrownfoxx.push.viewmodels
 
 import android.app.Application
-import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.thebrownfoxx.push.extensions.showLongToast
 import com.thebrownfoxx.push.extensions.showShortToast
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,9 +33,6 @@ class LoginViewModel(private val application: Application) : AndroidViewModel(ap
 
     private val _loginButtonEnabled = MutableStateFlow(true)
     val loginButtonEnabled = _loginButtonEnabled.asStateFlow()
-
-    private val _loading = MutableStateFlow(false)
-    val loading = _loading.asStateFlow()
 
     fun setEmail(email: String) {
         _email.value = email
@@ -76,7 +71,7 @@ class LoginViewModel(private val application: Application) : AndroidViewModel(ap
                     }
                 }
                 .addOnFailureListener { exception ->
-                    application.showShortToast("Error: ${exception.localizedMessage}")
+                    application.showLongToast("Error: ${exception.localizedMessage}")
                     _loginButtonEnabled.value = true
                 }
         }

@@ -8,10 +8,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import com.ramcosta.composedestinations.navigation.popUpTo
 import com.thebrownfoxx.push.extensions.application
 import com.thebrownfoxx.push.ui.screens.destinations.HomeDestination
 import com.thebrownfoxx.push.ui.screens.destinations.SignUpDestination
+import com.thebrownfoxx.push.viewmodels.LoginViewModel
 
 @RootNavGraph(start = true)
 @Destination
