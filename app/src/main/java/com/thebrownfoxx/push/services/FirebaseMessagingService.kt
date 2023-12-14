@@ -13,25 +13,32 @@ class FirebaseMessagingService : FirebaseMessagingService() {
         Log.d(FirebaseMessagingService::class.java.simpleName, "From: ${message.from}")
 
         message.data.let {
-            Log.d(FirebaseMessagingService::class.java.simpleName,"Message data payload: " + message.data)
+            Log.d(
+                this::class.java.simpleName,
+                "Message data payload: " + message.data,
+            )
         }
 
         message.notification?.let {
-            Log.d(FirebaseMessagingService::class.java.simpleName,"Message Notification Body: " + it.body)
-            generateNotification(it.body!!,it.title!!)
+            Log.d(
+                this::class.java.simpleName,
+                "Message Notification Body: " + it.body,
+            )
+            generateNotification(it.body!!, it.title!!)
         }
     }
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
-        //SENDING TOKEN TO SERVER
-        Log.d(FirebaseMessagingService::class.java.simpleName,"My token: $token")
+        Log.d(FirebaseMessagingService::class.java.simpleName, "My token: $token")
     }
 
 
-    private fun generateNotification(messageBody: String, messageTitle: String){
-        val notificationManager = ContextCompat.getSystemService(applicationContext,
-            NotificationManager::class.java) as NotificationManager
-        notificationManager.sendNotification(messageBody,messageTitle,applicationContext)
+    private fun generateNotification(messageBody: String, messageTitle: String) {
+        val notificationManager = ContextCompat.getSystemService(
+            applicationContext,
+            NotificationManager::class.java
+        ) as NotificationManager
+        notificationManager.sendNotification(messageBody, messageTitle, applicationContext)
     }
 }

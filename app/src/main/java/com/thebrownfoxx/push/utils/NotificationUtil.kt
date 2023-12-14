@@ -14,7 +14,11 @@ import com.thebrownfoxx.push.R
 private const val NOTIFICATION_ID = 6969
 
 @SuppressLint("UnspecifiedImmutableFlag")
-fun NotificationManager.sendNotification(messageBody: String, messageTitle: String, applicationContext: Context){
+fun NotificationManager.sendNotification(
+    messageBody: String,
+    messageTitle: String,
+    applicationContext: Context
+) {
     val contentIntent = Intent(applicationContext, MainActivity::class.java)
 
     val pendingIntent = PendingIntent.getActivity(
@@ -46,6 +50,6 @@ fun NotificationManager.sendNotification(messageBody: String, messageTitle: Stri
         .setPriority(NotificationCompat.PRIORITY_HIGH)
         .setAutoCancel(true)
 
-    notify(NOTIFICATION_ID,builder.build())
+    notify(NOTIFICATION_ID, builder.build())
 
 }
